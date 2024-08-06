@@ -80,7 +80,7 @@ def main():
 
     if 'LOCAL_RANK' not in os.environ:
         os.environ['LOCAL_RANK'] = str(args.local_rank)
-    init_dist(parser.dist)
+    init_dist(args.dist)
     
     key_params = get_key_params(args)
     if args.setting is not None:
