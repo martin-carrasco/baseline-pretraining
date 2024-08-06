@@ -1,5 +1,5 @@
-import babylm_baseline_train.models.helper as helper
-from babylm_baseline_train.train.tk_funcs import\
+import baseline_pretraining.models.helper as helper
+from baseline_pretraining.train.tk_funcs import\
         get_tokenizer_func
 import functools
 from transformers import DataCollatorForLanguageModeling

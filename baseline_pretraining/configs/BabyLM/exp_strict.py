@@ -1,9 +1,9 @@
-import babylm_baseline_train.datasets.babyLM as babyLM
-from babylm_baseline_train.configs.general import\
+import baseline_pretraining.datasets.babyLM as babyLM
+from baseline_pretraining.configs.general import\
         add_func_in_general_for_opt, get_general_data_func
 import functools
 from itertools import product
-import babylm_baseline_train.train.tk_funcs as tk_funcs
+import baseline_pretraining.train.tk_funcs as tk_funcs
 
 
 KWARGS = dict(

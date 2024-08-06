@@ -13,7 +13,7 @@ def get_setting_func(setting):
     try:
         load_setting_module = importlib.import_module(module_name)
     except:
-        module_name = 'babylm_baseline_train.configs.' + module_name
+        module_name = 'baseline_pretraining.configs.' + module_name
         load_setting_module = importlib.import_module(module_name)
     setting_func = getattr(load_setting_module, func_name)
     return setting_func
