@@ -1,6 +1,6 @@
 import os
 import datasets
-from babylm_baseline_train.env_vars import DATASET_ROOT_DIR
+from baseline_pretraining.env_vars import DATASET_ROOT_DIR
 
 
 _CITATION = """

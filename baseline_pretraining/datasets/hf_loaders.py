@@ -1,9 +1,9 @@
 from datasets import load_dataset
 from ..env_vars import ROOT_DIR, DATASET_ROOT_DIR
 import os
-import babylm_baseline_train
+import baseline_pretraining
 
-repo_path = babylm_baseline_train.__path__[0]
+repo_path = baseline_pretraining.__path__[0]
 
 
 def get_babyLM(name, split):

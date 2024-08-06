@@ -12,13 +12,13 @@ from pt_framework.epoch_based_runner import EpochBasedRunner
 from pt_framework.dist_utils import init_dist
 
 
-from babylm_baseline_train.basic_param_setter import ParamsBuilder
-import babylm_baseline_train.models.helper as helper
-from babylm_baseline_train.train.tk_funcs import\
+from baseline_pretraining.basic_param_setter import ParamsBuilder
+import baseline_pretraining.models.helper as helper
+from baseline_pretraining.train.tk_funcs import\
         get_tokenizer_func
-from babylm_baseline_train.datasets.babyLM import get_babyLM_10M
-from babylm_baseline_train.datasets.utils import collate_fn
-from babylm_baseline_train.train.utils import get_setting_func
+from baseline_pretraining.datasets.babyLM import get_babyLM_10M
+from baseline_pretraining.datasets.utils import collate_fn
+from baseline_pretraining.train.utils import get_setting_func
 
 
 def get_parser():

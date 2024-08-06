@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "baseline-pretraining"
+version = "0.1.0"
+description = "Training for BabyLM"
+authors = ["Martin Carrasco <martin.carrasco@utec.edu.pe>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+torch = "^2.4.0"
+numpy = "^2.0.1"
+transformers = "^4.43.4"
+jax = "^0.4.31"
+flax = "^0.8.5"
+sentencepiece = "^0.2.0"
+ipdb = "^0.13.13"
+datasets = "^2.20.0"
+pt-framework = {path = "../pt_framework"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

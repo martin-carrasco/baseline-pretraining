@@ -4,8 +4,8 @@ import setuptools
 import torch
 import transformers
 
-import babylm_baseline_train.train.tk_funcs as tk_funcs
-import babylm_baseline_train.models.helper as helper
+import baseline_pretraining.train.tk_funcs as tk_funcs
+import baseline_pretraining.models.helper as helper
 
 def load_opt125m():
     tokenizer = tk_funcs.get_tokenizer_func()
