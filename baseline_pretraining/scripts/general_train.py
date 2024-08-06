@@ -42,6 +42,12 @@ def get_parser():
             '--opt_model_size', 
             default='125m', type=str, 
             action='store')
+    parser.add_argument(
+                '--dist',
+                default='pytorch', type=str,
+                action='store',
+                help='Where to execute (pytorch, slurm, mpi)'
+            )
     return parser
 
 
@@ -74,7 +80,7 @@ def main():
 
     if 'LOCAL_RANK' not in os.environ:
         os.environ['LOCAL_RANK'] = str(args.local_rank)
-    init_dist('pytorch')
+    init_dist(parser.dist)
     
     key_params = get_key_params(args)
     if args.setting is not None:
