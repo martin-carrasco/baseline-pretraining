@@ -11,5 +11,5 @@ def get_babyLM(name, split):
             path=os.path.join(
                 repo_path, 'datasets', "babyLM_for_hf.py"),
             name=name,
-            split=split)
+            split=split, trust_remote_code=True)
     return dataset
