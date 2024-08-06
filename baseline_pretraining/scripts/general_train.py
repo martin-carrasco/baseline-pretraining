@@ -45,7 +45,6 @@ def get_parser():
     parser.add_argument(
                 '--dist',
                 default='pytorch', type=str,
-                action='store',
                 help='Where to execute (pytorch, slurm, mpi)'
             )
     return parser
