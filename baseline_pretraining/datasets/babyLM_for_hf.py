@@ -38,6 +38,11 @@ class babyLM(datasets.GeneratorBasedBuilder):
             'aochildes', 'bnc_spoken', 'cbt', 'children_stories',
             'gutenberg', 'open_subtitles', 'qed',  'simple_wikipedia',
             'switchboard',  'wikipedia']
+    DATA_SOURCES = [
+        'bnc_spoken',  'childes',
+        'gutenberg',  'open_subtitles',
+        'simple_wiki', 'switchboard.train'
+    ]
     VERSION = datasets.Version("0.0.0")
     BUILDER_CONFIGS = [
             babyLMConfig(
