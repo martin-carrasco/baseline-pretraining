@@ -5,8 +5,13 @@ Python 3.11, transformer package in huggingface, and datasets package in hugging
 Clone this:
 https://github.com/martin-carrasco/pt_framework
 
-Clone the following repo and build it according to it's README. Then, run `poetry install` 
-and `poetry shell` to execute this environment
+Clone the following repo and build it according to it's README. 
+
+## Using poetry (optinal)
+Then, run `poetry install` and `poetry shell` to execute this environment
+
+## Using Conda, Pyenv, etc
+If you are using any other environment then you have to install `pt_framework` doing `pip install .` and the run `pip install .` on the root directory of the project on your choice of python virtual environment.
 
 
 ## Where to put data
