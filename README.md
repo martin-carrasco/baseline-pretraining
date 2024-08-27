@@ -1,18 +1,112 @@
-# Environment
 
-Python 3.11, transformer package in huggingface, and datasets package in huggingface.
+# Setup 
 
-Clone this:
-https://github.com/martin-carrasco/pt_framework
+## Virtual environment
+First we need to set-up a virtual environment to be able to manage packages. There are plenty of choices out there for environment managers but we will give a brief explanation of the two most popular ones: venv and conda
 
-Clone the following repo and build it according to it's README. 
+### Installation 
 
-## Using poetry (optinal)
-Then, run `poetry install` and `poetry shell` to execute this environment
+#### Conda (Miniconda)
+The complete installation guide can be found [here](https://docs.anaconda.com/miniconda/miniconda-install/). However, we will detail steps for macOS and Linux. We will use a distribution of *Conda* called *Miniconda* which is somewhat smaller.
 
-## Using Conda, Pyenv, etc
-If you are using any other environment then you have to install `pt_framework` doing `pip install .` and the run `pip install .` on the root directory of the project on your choice of python virtual environment.
 
+##### Linux
+
+First create a directory for miniconda
+```
+mkdir -p ~/miniconda3
+```
+then get the installation script (for x86_64)
+```
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+```
+or for x64 architecture 
+```
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-aarch64.sh
+```
+Now, execute the script and pass the path set in the first command as conda's home. Enter your settings and leave as default if not sure.
+```
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+```
+Depending on your shell you can initialize with the following command
+```
+~/miniconda3/bin/conda init bash
+```
+if you use a different shell replace `bash` with it. 
+
+To make sure the install is working close your current terminal and reopen another one with your specified shell and run `conda list`.
+
+finally, delete the install script
+```
+rm ~/miniconda3/miniconda.sh
+```
+
+##### MacOS
+First create a directory for miniconda
+```
+mkdir -p ~/miniconda3
+```
+then get the installation script (for arm64)
+```
+curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh -O ~/miniconda3/miniconda.sh
+```
+Now, execute the script and pass the path set in the first command as conda's home. Enter your settings and leave as default if not sure.
+```
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+```
+Depending on your shell you can initialize with the following command
+```
+~/miniconda3/bin/conda init zsh
+```
+if you use a different shell replace `zsh` with it. 
+
+To make sure the install is working close your current terminal and reopen another one with your specified shell and run `conda list`.
+
+finally, delete the install script
+```
+rm ~/miniconda3/miniconda.sh
+```
+
+#### venv
+
+The oficial repository of venv [here](https://github.com/pyenv/pyenv) has some very detail installation instructions, but we will cover a basic usage here.
+
+##### Linux
+##### MacOS
+
+
+### Creating an environment
+To use this library we will need to create a particular environment using Python version 12.1 and up.
+
+1. First, we create en environment using either Conda or Pyenv
+    1. With conda
+        1. Run `conda create --name test_env python=3.12`
+    2. With pyenv
+        1. First we install Python 3.12 using `pyenv install 3.12`
+2. Now we activate our environment
+    1. With conda
+        1. Run `conda activate test_env` to use the current envionment
+    2. With pyenv
+        1. This will be done locally on the next step
+
+## Package management
+Each environment we created represents a particular python version an a set of *packages* installed for the interpreter.
+Different projects might require different packages as dependancies change, to handle that this repository uses poetry to configure
+*a particular python interpreter instance*. For the macOS installation checkout branch `macos`.
+1. First, make a directory, in this case we will name it `babylm_test` with `mkdir babylm_test` and `cd babylm_test`
+2. Then, clone this repository
+3. Clone the supporting repository https://github.com/martin-carrasco/pt_framework
+4. Go inside the repo using `cd baseline-pretraining` and activate your environment
+    1. Using conda `conda activate test_env`
+    2. Using pyenv `pyenv local 3.12`
+    3. Using Makefile `make conda` or `make pyenv` or `make env` (last one uses conda by default or else pyenv)
+5. Install the dependencies
+    1. MacOS (checkout branch `macos`)
+        1. With torch cpu based libraries just run `poetry install`
+        2. With torch gpu based libraries run `poetry install --with gpu121`
+    2.  Linux 
+        1. With cpu `poetry install`
+        1. With gpu `poetry install --with gpu121`
 
 ## Where to put data
 
