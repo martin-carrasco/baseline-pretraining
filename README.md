@@ -126,7 +126,7 @@ Learning rate schedule is defined at function `get_learning_rate_params` in scri
 
 
 ## Training
-
+Training takes place in a distributed manner, that is, multiple GPUs are used. If you want to use just one GPU/Node just set `nproc_per_node` to 1. Additionally, the `master_port` parameter is where the main port for `SLURM` takes requests given that it is being used by you. To use  without SLURM pass `--dist slurm` as a parameter. The defalt value is `pytorch`
 ### OPT-125M
 Run the following command under the `scripts` folder.
 ```
